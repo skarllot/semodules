@@ -1,0 +1,12 @@
+
+module logwatch_sendEmail 1.1;
+
+require {
+	type admin_home_t;
+	type logwatch_t;
+	class file { read execute open };
+}
+
+#============= logwatch_t ==============
+# Allow access to sendEmail from logwatch
+allow logwatch_t admin_home_t:file { read execute open };

@@ -1,12 +1,12 @@
 
-module logwatch_sendEmail 1.1;
+module logwatch_sendEmail 1.2;
 
 require {
 	type admin_home_t;
 	type logwatch_t;
-	class file { read execute open };
+	class file { read execute open execute_no_trans };
 }
 
 #============= logwatch_t ==============
 # Allow access to sendEmail from logwatch (/usr/local/bin)
-allow logwatch_t admin_home_t:file { read execute open };
+allow logwatch_t admin_home_t:file { read execute open execute_no_trans };

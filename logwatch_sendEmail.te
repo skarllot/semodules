@@ -8,5 +8,5 @@ require {
 }
 
 #============= logwatch_t ==============
-# Allow access to sendEmail from logwatch
+# Allow access to sendEmail from logwatch (/usr/local/bin)
 allow logwatch_t admin_home_t:file { read execute open };

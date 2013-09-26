@@ -1,5 +1,5 @@
 
-module zabbix_fping 1.1;
+module zabbix_fping 1.2;
 
 require {
 	type var_spool_t;
@@ -9,5 +9,4 @@ require {
 
 #============= ping_t ==============
 # Tmpdir should link to /var/spool/zabbix
-allow ping_t var_spool_t:file getattr;
-allow ping_t var_spool_t:file read;
+allow ping_t var_spool_t:file { read getattr };

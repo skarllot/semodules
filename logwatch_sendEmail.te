@@ -1,12 +1,13 @@
 
-module logwatch_sendEmail 1.2;
+module logwatch_sendEmail 1.3;
 
 require {
-	type admin_home_t;
+	type smtp_port_t;
 	type logwatch_t;
-	class file { read execute open execute_no_trans };
+	class tcp_socket name_connect;
 }
 
 #============= logwatch_t ==============
-# Allow access to sendEmail from logwatch (/usr/local/bin)
-allow logwatch_t admin_home_t:file { read execute open execute_no_trans };
+
+#!!!! This avc can be allowed using the boolean 'allow_ypbind'
+allow logwatch_t smtp_port_t:tcp_socket name_connect;

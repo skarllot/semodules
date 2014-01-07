@@ -1,12 +1,14 @@
 #!/bin/bash
 
-semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/owncloud/config(/.*)?"
-restorecon -R -v /var/www/owncloud/config
-semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/owncloud/apps(/.*)?"
-restorecon -R -v /var/www/owncloud/apps
-semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/owncloud/data(/.*)?"
-mkdir /var/www/owncloud/data
-chown -R apache. /var/www/owncloud/data
-restorecon -R -v /var/www/owncloud/data
+BASE_DIR=${BASE_DIR}
 
-chmod -R o-w /var/www/owncloud
+semanage fcontext -a -t httpd_sys_rw_content_t "${BASE_DIR}/config(/.*)?"
+restorecon -R -v ${BASE_DIR}/config
+semanage fcontext -a -t httpd_sys_rw_content_t "${BASE_DIR}/apps(/.*)?"
+restorecon -R -v ${BASE_DIR}/apps
+semanage fcontext -a -t httpd_sys_rw_content_t "${BASE_DIR}/data(/.*)?"
+mkdir ${BASE_DIR}/data
+chown -R apache. ${BASE_DIR}/data
+restorecon -R -v ${BASE_DIR}/data
+
+chmod -R o-w ${BASE_DIR}

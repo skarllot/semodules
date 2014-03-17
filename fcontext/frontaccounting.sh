@@ -6,10 +6,6 @@ if [ -z $BASE_DIR ]; then
     exit 1
 fi
 
-touch ${BASE_DIR}/config_db.php
-touch ${BASE_DIR}/config.php
-touch ${BASE_DIR}/installed_extensions.php
-
 chmod -R 0000 ${BASE_DIR}
 chmod -R u+rwX ${BASE_DIR}
 chmod -R g+rX ${BASE_DIR}

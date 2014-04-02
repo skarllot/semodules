@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#BASE_DIR=${BASE_DIR}
 if [ -z $BASE_DIR ]; then
     echo "Error: \$BASE_DIR is undefined"
     exit 1

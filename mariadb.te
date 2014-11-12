@@ -1,9 +1,10 @@
-module mariadb 1.0;
+module mariadb_service_start 1.0;
 
 require {
         type mysqld_t;
         type var_t;
         class dir add_name;
+        class dir create;
         class dir read;
         class dir remove_name;
         class dir rmdir;
@@ -17,6 +18,7 @@ require {
 
 #============= mysqld_t ==============
 allow mysqld_t var_t:dir add_name;
+allow mysqld_t var_t:dir create;
 allow mysqld_t var_t:dir read;
 allow mysqld_t var_t:dir remove_name;
 allow mysqld_t var_t:dir rmdir;

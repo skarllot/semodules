@@ -25,6 +25,6 @@ semodule -d MODULE_NAME
 ###Remove
 
 ```
-semodule -u MODULE_NAME
+semodule -r MODULE_NAME
 ```
 

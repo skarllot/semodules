@@ -1,0 +1,31 @@
+module mariadb_service_start 1.0;
+
+require {
+        type mysqld_t;
+        type var_t;
+        class dir add_name;
+        class dir create;
+        class dir read;
+        class dir remove_name;
+        class dir rmdir;
+        class dir write;
+        class file create;
+        class file { getattr unlink append };
+        class file lock;
+        class file open;
+        class file { read write };
+}
+
+#============= mysqld_t ==============
+allow mysqld_t var_t:dir add_name;
+allow mysqld_t var_t:dir create;
+allow mysqld_t var_t:dir read;
+allow mysqld_t var_t:dir remove_name;
+allow mysqld_t var_t:dir rmdir;
+allow mysqld_t var_t:dir write;
+allow mysqld_t var_t:file create;
+allow mysqld_t var_t:file { getattr unlink append };
+allow mysqld_t var_t:file lock;
+allow mysqld_t var_t:file open;
+allow mysqld_t var_t:file { read write };
+

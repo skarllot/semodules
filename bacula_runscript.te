@@ -1,0 +1,14 @@
+
+module bacula_runscript 1.0;
+
+require {
+	type bacula_etc_t;
+	type bacula_t;
+	type lib_t;
+	class file execute;
+	class file execute_no_trans;
+}
+
+#============= bacula_t ==============
+allow bacula_t bacula_etc_t:file execute;
+allow bacula_t lib_t:file execute_no_trans;
